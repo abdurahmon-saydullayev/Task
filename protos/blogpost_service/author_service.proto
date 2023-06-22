@@ -6,7 +6,7 @@ option go_package="genproto/blogpost_service";
 import "google/protobuf/empty.proto";
 import "author.proto";
 
-service StatusService {
+service AuthorService {
     rpc Create(CreateAuthor) returns (Author) {}
     rpc GetByID(AuthorPK) returns (Author) {}
     rpc GetList(GetAuthorListRequest) returns (GetAuthorListResponse) {}
