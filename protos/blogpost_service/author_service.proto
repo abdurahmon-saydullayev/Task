@@ -1,0 +1,15 @@
+syntax="proto3";
+
+package blogpost_service;
+option go_package="genproto/blogpost_service";
+
+import "google/protobuf/empty.proto";
+import "author.proto";
+
+service StatusService {
+    rpc Create(CreateAuthor) returns (Author) {}
+    rpc GetByID(AuthorPK) returns (Author) {}
+    rpc GetList(GetAuthorListRequest) returns (GetAuthorListResponse) {}
+    rpc Update(UpdateAuthorResponse) returns (Author) {}
+    rpc Delete(AuthorPK) returns (google.protobuf.Empty) {}
+}

@@ -1,0 +1,29 @@
+{
+  "name": "task",
+  "version": "1.0.0",
+  "description": "task",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdurahmon-saydullayev/Task.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abdurahmon-saydullayev/Task/issues"
+  },
+  "homepage": "https://github.com/abdurahmon-saydullayev/Task#readme",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.8.16",
+    "@grpc/proto-loader": "^0.7.7",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.3.1",
+    "uuid": "^9.0.0",
+    "winston": "^3.9.0"
+  }
+}

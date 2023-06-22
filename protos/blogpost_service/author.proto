@@ -1,0 +1,39 @@
+syntax="proto3";
+
+package blogpost_service;
+option go_package="genproto/blogpost_service";
+
+message Author {
+    string id = 1;
+    string first_name = 2;
+    string last_name = 3;
+    string created_at = 4;
+    string updated_at = 5;
+}
+
+message CreateAuthor {
+    string first_name = 1;
+    string last_name = 2;
+}
+
+message AuthorPK {
+    string id = 1;
+}
+
+message UpdateAuthorResponse {
+    string id = 1;
+    string first_name = 2;
+    string last_name = 3;
+}
+
+message GetAuthorListRequest {
+    int32 limit = 1;
+    int32 offset = 2;
+    string search = 3;
+    string type = 4;
+}
+
+message GetAuthorListResponse {
+    int32 count = 1;
+    repeated Author authors = 2;
+}

@@ -1,0 +1,3 @@
+[submodule "task_proto"]
+	path = task_proto
+	url = https://github.com/abdurahmon-saydullayev/task_proto.git

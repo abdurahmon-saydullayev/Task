@@ -1,0 +1,7 @@
+syntax="proto3";
+
+package blogpost_service;
+option go_package="genproto/blogpost_service";
+
+import "author_service.proto";
+import "book_service.proto";
