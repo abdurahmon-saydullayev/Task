@@ -4,7 +4,7 @@ const Config = {
   version: getOrReturnDefaultValue("VERSION", "1.0"),
 
   serviceHost: getOrReturnDefaultValue("SERVICE_HOST", "localhost"),
-  grpcPort: getOrReturnDefaultValue("GRPC_PORT", ":9102"),
+  grpcPort: getOrReturnDefaultValue("GRPC_PORT", ":9092"),
 
   mongoHost: getOrReturnDefaultValue("MONGO_HOST", "localhost"),
   mongoPort: getOrReturnDefaultValue("MONGO_PORT", "27017"),

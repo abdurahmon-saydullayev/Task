@@ -15,11 +15,15 @@ const BookSchema = new mongoose.Schema(
       required: [true, "price is REQUIRED"],
     },
     author_id: {
-      type: String, // Updated type to String
+      type: String,
       required: [true, "author_id is REQUIRED"],
     },
     year: {
       type: Number,
+    },
+    author: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Author",
     },
   },
   {
@@ -33,4 +37,4 @@ const BookSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("Book", BookSchema);
+ module.exports = mongoose.model("Book", BookSchema);

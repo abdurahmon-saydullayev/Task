@@ -1,4 +1,5 @@
 const BookModel = require("../../models/book");
+const AuthorModel = require("../../models/author");
 const CatchWrapDb = require("../../wrappers/db");
 
 const namespace = "Storage.Book";
@@ -14,13 +15,20 @@ const BookStorage = {
 
   GetByID: CatchWrapDb(`${namespace}.GetByID`, async (args) => {
     if (!args.id) {
-      throw new Error("id is required to get book");
+      throw new Error("id is required to get a book");
     }
 
-    let book = await BookModel.findOne({ _id: args.id }).populate("author_id");
+    const book = await BookModel.findOne({ _id: args.id });
+    const author = await AuthorModel.findOne({ _id: book.author_id });
 
     if (!book) {
-      throw new Error("failed to find book with the given id");
+      throw new Error("Failed to find a book with the given id");
+    }
+
+    book.author = author;
+
+    if (!author) {
+      throw new Error("Failed to populate the author field");
     }
 
     return book;
